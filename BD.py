@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-from neo_config import uri, user, password
+from neo_config import uri, user, password 
 
 class DatabaseManager:
     def __init__(self, uri, user, password):
@@ -57,7 +57,7 @@ class DatabaseManager:
                 sede_nombre=sede_nombre
             )
 
-# Conexión a Neo4j
+
 db_manager = DatabaseManager(uri, user, password)
 
 db_manager.close()
