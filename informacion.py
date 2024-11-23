@@ -4,6 +4,7 @@ from neo_config import uri, user, password
 # Conexión a Neo4j
 db_manager = DatabaseManager(uri, user, password)
 
+# Crear departamentos
 departamentos = [
     "Departamento de Ciencias", "Departamento de Ingeniería", "Departamento de Matemáticas",
     "Departamento de Física", "Departamento de Química", "Departamento de Biología",
@@ -63,6 +64,7 @@ carreras = [
     ("Licenciatura en Psicología", "4 años", 1600.00, "Licenciado en Psicología", "Sede Centro"),
 ]
 
+# Insertar todos los datos en la base de datos
 for depto in departamentos:
     db_manager.create_departamento(depto)
 
@@ -78,4 +80,5 @@ for sede in sedes:
 for carrera in carreras:
     db_manager.create_carrera(*carrera)
 
+# Cerrar la conexión a la base de datos
 db_manager.close()
