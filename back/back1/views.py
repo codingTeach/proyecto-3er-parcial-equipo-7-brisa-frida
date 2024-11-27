@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import obtener_departamentos
-
+from back.back1.models import MiModelo  
 urlpatterns = [
     path('api/departamentos/', views.obtener_departamentos_view),
 ]

@@ -1,4 +1,5 @@
 from neo import Neo4jConnection
+from .neo import Neo4jConnection
 
 def obtener_departamentos():
     conn = Neo4jConnection()

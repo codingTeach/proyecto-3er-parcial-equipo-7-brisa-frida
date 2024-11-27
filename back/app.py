@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from BD import DatabaseManager
-from neo_config.py import uri, user, password
+from neo_config import uri, user, password
 
 app = Flask(__name__)
 db_manager = DatabaseManager(uri, user, password)

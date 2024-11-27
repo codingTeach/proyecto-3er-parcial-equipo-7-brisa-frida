@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'back1',
+    'app',
     'corsheaders',
+    'back1',
 ]
 
 NEO4J = {

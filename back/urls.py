@@ -23,3 +23,8 @@ urlpatterns = [
 urlpatterns = [
     path('profesores/', views.obtener_profesores, name='obtener_profesores'),
 ]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('app/', include('app.urls')),
+]
