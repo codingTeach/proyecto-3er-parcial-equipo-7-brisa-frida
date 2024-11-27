@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'back1',
 ]
+
+NEO4J = {
+    'uri': 'bolt://localhost:7687',  # Cambia esto a tu URI de Neo4j
+    'user': 'neo4j',
+    'password': 'contraseña',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
