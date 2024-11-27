@@ -20,4 +20,6 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
-
+urlpatterns = [
+    path('profesores/', views.obtener_profesores, name='obtener_profesores'),
+]

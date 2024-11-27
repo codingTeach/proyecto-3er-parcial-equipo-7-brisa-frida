@@ -30,3 +30,11 @@ const App = () => {
 };
 
 export default App;
+const fetchProfesores = async () => {
+    try {
+        const response = await axios.get("http://localhost:5000/profesores"); // Cambia el puerto si es necesario
+        setProfesores(response.data);
+    } catch (error) {
+        console.error("Error al cargar los profesores:", error);
+    }
+};
