@@ -1,6 +1,0 @@
- .idea/
-.venv/
-.__pycache__/
-.app/app/
-.back/
-neo_config.py
