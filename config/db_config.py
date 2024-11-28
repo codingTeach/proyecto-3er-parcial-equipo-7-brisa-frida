@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
 def get_db():
-    client = MongoClient("mongodb+srv://<mi_usuario>:<mi_contraseña>@cluster0.mongodb.net/analisis_datos?retryWrites=true&w=majority")
-    db = client.analisis_datos
+    client = MongoClient("mongodb+srv://200300606:uaOPE866Q05En2b6@cluster.ukkl1.mongodb.net/?retryWrites=true&w=majority")
+    db = client.sample_airbnb
     return db
