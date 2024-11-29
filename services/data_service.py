@@ -4,12 +4,12 @@ import json
 import os
 from dotenv import load_dotenv
 
-# Carga las variables de entorno
+
 load_dotenv()
 
 class DataService:
     def __init__(self):
-        # Obtén las variables de entorno sin comillas adicionales
+        
         self.client = MongoClient(os.getenv('MONGO_URI'))
         self.db = self.client[os.getenv('DB_NAME')]
         self.collection = self.db[os.getenv('COLLECTION_NAME')]
@@ -26,7 +26,7 @@ class DataService:
         return json.loads(dumps(data))
 
     def get_visualization_data(self, viz_type):
-        # Define pipelines para visualización
+
         if viz_type == "categorias":
             pipeline = [
                 {"$group": {"_id": "$categoria", "total": {"$sum": "$valor"}, "count": {"$sum": 1}}},
@@ -48,7 +48,7 @@ class DataService:
         data = self.collection.aggregate(pipeline)
         return json.loads(dumps(data))
 
-    # Método para insertar datos
+   
     def insert_data(self, data):
         if isinstance(data, list):
             self.collection.insert_many(data)

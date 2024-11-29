@@ -1,26 +1,25 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from services.data_service import DataService  # Importa la clase DataService
+from services.data_service import DataService  
 
 app = Flask(__name__)
 CORS(app)
 
-# Instancia de la clase DataService
 data_service = DataService()
 
-# Ruta principal, que devuelve un mensaje simple
+
 @app.route('/')
 def home():
     return "Bienvenido a la API de la Tienda de Discos"
 
 @app.route('/data', methods=['GET'])
 def get_data():
-    data = data_service.get_all_data()  # Llama al método de la instancia
+    data = data_service.get_all_data()
     return jsonify(data)
 
 @app.route('/data/<category>', methods=['GET'])
 def get_data_category(category):
-    data = data_service.get_data_by_category(category)  # Llama al método de la instancia
+    data = data_service.get_data_by_category(category) 
     return jsonify(data)
 
 @app.route('/insert_data', methods=['POST'])
