@@ -1,8 +1,10 @@
-*.idea/
-*.venv/
-*.env
-*.services/
-*.config/
-*requirements.txt
+.idea/
+.venv/
+.env
+services/
+config/
+requirements.txt
 *.new
-*conexion.py
+conexion.py
+__pycache__/
+*.pyc
