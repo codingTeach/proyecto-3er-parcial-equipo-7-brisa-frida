@@ -3,49 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Dashboard de Gráficos</title>
- 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
         .chart-container {
-            width: 80%;
-            margin: 20px auto;
             text-align: center;
         }
         canvas {
             margin: 0 auto;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
     <h1>Dashboard de Tienda de Discos</h1>
 
+    <div class="charts-container">
+        <div class="chart-container">
+            <h2>Distribución de Stock por Categoría</h2>
+            <canvas id="categoryChart"></canvas>
+        </div>
 
-    <div class="chart-container">
-        <h2>Distribución de Stock por Categoría</h2>
-        <canvas id="categoryChart"></canvas>
+        <div class="chart-container">
+            <h2>Stock por Año de Lanzamiento</h2>
+            <canvas id="timeChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>Precio Promedio por Categoría</h2>
+            <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>Distribución de Precio por Categoría</h2>
+            <canvas id="priceDistributionChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>Evolución de Stock por Año</h2>
+            <canvas id="stockEvolutionChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>Total de Discos por Formato</h2>
+            <canvas id="totalStockByFormatChart"></canvas>
+        </div>
     </div>
 
-  
-    <div class="chart-container">
-        <h2>Stock por Año de Lanzamiento</h2>
-        <canvas id="timeChart"></canvas>
-    </div>
-
-    
-    <div class="chart-container">
-        <h2>Precio Promedio por Categoría</h2>
-        <canvas id="priceChart"></canvas>
-    </div>
-
-
-
-   
     <script src="{{ url_for('send_static', path='js/charts.js') }}"></script>
 </body>
 </html>
