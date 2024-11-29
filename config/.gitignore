@@ -1,9 +1,8 @@
-.idea/
-.venv/
-.env
-.services/
-.config/
-app.py.new
-requirements.txt
+*.idea/
+*.venv/
+*.env
+*.services/
+*.config/
+*requirements.txt
 *.new
-conexion.py
+*conexion.py
